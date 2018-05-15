@@ -4,9 +4,7 @@ author: Tobias Schoch
 
 Overview
 --------
-
-Rsync connection containers from/to for blob storage upload to server.
-A compose file with a test setup and customized containers
+Rsync connection containers from/to for blob storage upload to server. A compose file with a test setup and customized containers.
 
 Change-Log
 ----------
@@ -19,7 +17,7 @@ Installation / Usage
 clone the repo:
 
 ```
-git clone <git-url>
+git clone https://github.com/toschoch/docker-rsync.git
 ```
 build the docker rsync-from, rsync-to images
 ```

@@ -12,4 +12,4 @@ EXPOSE 873
 COPY ./run.sh /
 RUN chmod +x run.sh
 
-#ENTRYPOINT ["./run.sh"]
+ENTRYPOINT ["./run.sh"]

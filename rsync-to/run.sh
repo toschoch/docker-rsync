@@ -6,7 +6,7 @@ GROUP=${GROUP:-root}
 
 chown "${OWNER}:${GROUP}" "${VOLUME}"
 
-[ -f /etc/rsyncd.conf ] || cat <<EOF > /etc/rsyncd.conf
+cat <<EOF > /etc/rsyncd.conf
 uid = ${OWNER}
 gid = ${GROUP}
 use chroot = yes

@@ -1,0 +1,2 @@
+# RSync upload job, every minute
+*/1 * * * * /upload.sh

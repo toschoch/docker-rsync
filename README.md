@@ -21,10 +21,14 @@ clone the repo:
 ```
 git clone <git-url>
 ```
-build the docker rsync-from image
+build the docker rsync-from, rsync-to images
 ```
 cd rsync-from
-docker build . -t rsync-from
+docker build . -t shocki/rsync-from
+cd ..
+
+cd rsync-to
+docker build . -t shocki/rsync-to
 cd ..
 ```
 

@@ -2,7 +2,7 @@ FROM alpine:3.7
 
 MAINTAINER Tobias Schoch
 
-RUN apk update && apk --no-cache add rsync
+RUN apk update && apk --no-cache add rsync inotify-tools
 
 # make the data volume if not yet existing
 RUN mkdir -p /data

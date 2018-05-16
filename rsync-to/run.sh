@@ -12,6 +12,8 @@ gid = ${GROUP}
 use chroot = yes
 log file = /dev/stdout
 reverse lookup = no
+transfer logging = yes
+
 
 [${VOLUME}]
     hosts deny = *

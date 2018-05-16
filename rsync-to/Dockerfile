@@ -10,6 +10,7 @@ VOLUME /data
 
 EXPOSE 873
 COPY ./run.sh /
-RUN chmod +x run.sh
+COPY ./post /usr/bin
+RUN chmod +x run.sh && chmod +x /usr/bin/post
 
 ENTRYPOINT ["./run.sh"]

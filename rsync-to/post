@@ -30,21 +30,7 @@ while [ -h "$THIS_SCRIPT" ] ; do
   fi
 done
 
-SOLR_TIP=`dirname "$THIS_SCRIPT"`/..
-SOLR_TIP=`cd "$SOLR_TIP"; pwd`
-
-if [ -n "$SOLR_JAVA_HOME" ]; then
-  JAVA="$SOLR_JAVA_HOME/bin/java"
-elif [ -n "$JAVA_HOME" ]; then
-  for java in "$JAVA_HOME"/bin/amd64/java "$JAVA_HOME"/bin/java; do
-    if [ -x "$java" ]; then
-      JAVA="$java"
-      break
-    fi
-  done
-else
-  JAVA=java
-fi
+JAVA=java
 
 # test that Java exists and is executable on this server
 "$JAVA" -version >/dev/null 2>&1 || { echo >&2 "Java is required to run this tool! Please install Java 8 or greater before running this script."; exit 1; }
@@ -52,7 +38,7 @@ fi
 
 # ===== post specific code
 
-TOOL_JAR=("$SOLR_TIP/dist"/solr-core-*.jar)
+TOOL_JAR=/usr/bin/post.jar
 
 function print_usage() {
   echo ""

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 VOLUME=${VOLUME:-data}
 ALLOW=${ALLOW:-192.168.0.0/16 172.16.0.0/12}
 OWNER=${OWNER:-root}
@@ -23,4 +23,14 @@ transfer logging = yes
     comment = data volume
 EOF
 
+# start watching the directory
+if [ -z ${SOLR_HOST+x} ]; then
+    echo "no solr notification stared!"
+else
+    echo "install solr notification..."
+    exec ./watchfolder.sh &
+fi
+
+# start the rsync
 exec /usr/bin/rsync --no-detach --daemon --config /etc/rsyncd.conf
+

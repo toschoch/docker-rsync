@@ -4,7 +4,8 @@ author: Tobias Schoch
 
 Overview
 --------
-Rsync connection containers from/to for blob storage upload to server. A compose file with a test setup and customized containers.
+Rsync connection containers from/to for blob storage upload to server and possibility of notifying
+a solr server. A compose file with a test setup and customized containers.
 
 Change-Log
 ----------

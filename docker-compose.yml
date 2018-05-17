@@ -8,14 +8,16 @@ services:
       - rsync
     volumes:
       - D:\Users\TOS\docker\docker-rsync\storage\from:/data
-  rsync.to:
-    image: shocki/rsync-to
-    container_name: rsync.to
-    networks:
-      - rsync
-    volumes:
-      - D:\Users\TOS\docker\docker-rsync\storage\to:/data
+#  rsync.to:
+#    image: shocki/rsync-to
+#    container_name: rsync.to
+#    networks:
+#      - rsync
+#    volumes:
+#      - D:\Users\TOS\docker\docker-rsync\storage\to:/data
 
 networks:
   rsync:
-    driver: bridge
+    external:
+      name: blobdb_rsync
+#    driver: bridge
